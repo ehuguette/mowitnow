@@ -48,7 +48,7 @@ public class MowItNowTest {
 	final List<MowPosition> resultPositions = new ArrayList<>();
 	final MowPosition resultPosition1 = new MowPosition(1, 3, EnumDirection.N);
 	resultPositions.add(resultPosition1);
-	final MowPosition resultPosition2 = new MowPosition(5, 1, EnumDirection.E);
+	final MowPosition resultPosition2 = new MowPosition(1, 5, EnumDirection.E);
 	resultPositions.add(resultPosition2);
 
 	final List<MowPosition> mowPositions = mowItNow.move(move);
