@@ -1,0 +1,4 @@
+Remarques suite aux tests unitaires sur le sujet : 
+Le déroulement du cas 1 laisse voir une fin en X=1 Y=3 O=N
+Le déroulement du cas 2 sans obstacle laisse voir une fin en X=1 Y=5 O=E
+Le déroulement du cas 2 avec obstacle de la tondeuse 1 après son parcours laisse voir une fin en X=2 Y=5 O=E
