@@ -27,6 +27,8 @@ public class MowPosition
     private EnumDirection direction;
     /** The mow action generic operations. */
     private MowActionOperation mowActionOperation;
+    /** The number of notification received. */
+    private Integer notificationNumber;
 
     /**
      * Constructor.
@@ -42,7 +44,7 @@ public class MowPosition
 	this.coordinates = new Coordinates(xi, yi);
 	this.direction = direction;
 	this.mowActionOperation = new MowActionOperation();
-
+	this.notificationNumber = 0;
     }
 
     /**
@@ -67,6 +69,13 @@ public class MowPosition
      */
     public EnumDirection getDirection() {
 	return direction;
+    }
+
+    /**
+     * @return the notificationNumber
+     */
+    public Integer getNotificationNumber() {
+	return notificationNumber;
     }
 
     /**
@@ -102,6 +111,7 @@ public class MowPosition
     @Override
     public void update(Observable observable, Object object) {
 	if (observable instanceof MowActionObservable && object instanceof MowPosition) {
+	    this.notificationNumber = notificationNumber + 1;
 	    MowPosition mowPosition = (MowPosition) object;
 	    StringBuilder msg = new StringBuilder("Notification received from");
 	    msg.append(" - ").append(mowPosition.toString());
@@ -122,6 +132,7 @@ public class MowPosition
 	int result = 1;
 	result = prime * result + ((coordinates == null) ? 0 : coordinates.hashCode());
 	result = prime * result + ((direction == null) ? 0 : direction.hashCode());
+	result = prime * result + ((notificationNumber == null) ? 0 : notificationNumber.hashCode());
 	return result;
     }
 
@@ -130,26 +141,25 @@ public class MowPosition
      */
     @Override
     public boolean equals(Object obj) {
-	if (this == obj) {
+	if (this == obj)
 	    return true;
-	}
-	if (obj == null) {
+	if (obj == null)
 	    return false;
-	}
-	if (getClass() != obj.getClass()) {
+	if (getClass() != obj.getClass())
 	    return false;
-	}
 	MowPosition other = (MowPosition) obj;
 	if (coordinates == null) {
-	    if (other.coordinates != null) {
+	    if (other.coordinates != null)
 		return false;
-	    }
-	} else if (!coordinates.equals(other.coordinates)) {
+	} else if (!coordinates.equals(other.coordinates))
 	    return false;
-	}
-	if (direction != other.direction) {
+	if (direction != other.direction)
 	    return false;
-	}
+	if (notificationNumber == null) {
+	    if (other.notificationNumber != null)
+		return false;
+	} else if (!notificationNumber.equals(other.notificationNumber))
+	    return false;
 	return true;
     }
 
@@ -162,6 +172,7 @@ public class MowPosition
 	msg.append(" - X=").append(getX());
 	msg.append(" - Y=").append(getY());
 	msg.append(" - O=").append(getDirection());
+	msg.append(" - nb notify=").append(getNotificationNumber());
 	return msg.toString();
     }
 

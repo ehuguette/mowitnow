@@ -56,7 +56,7 @@ public class MowItNowTest {
 	Assert.assertEquals(2, mowPositions.size());
 
 	for (int index = 0; index < resultPositions.size(); index++) {
-	    Assert.assertEquals(resultPositions.get(index), mowPositions.get(index));
+	    DataGenerator.assertEquals(resultPositions.get(index), mowPositions.get(index), 2);
 	}
     }
 
@@ -73,7 +73,7 @@ public class MowItNowTest {
 	final List<MowPosition> mowPositions = mowItNow.move(move);
 	Assert.assertNotNull(mowPositions);
 	Assert.assertEquals(1, mowPositions.size());
-	Assert.assertEquals(resultPosition, mowPositions.get(0));
+	DataGenerator.assertEquals(resultPosition, mowPositions.get(0), 1);
     }
 
     /**
@@ -89,7 +89,8 @@ public class MowItNowTest {
 	final List<MowPosition> mowPositions = mowItNow.move(move);
 	Assert.assertNotNull(mowPositions);
 	Assert.assertEquals(1, mowPositions.size());
-	Assert.assertEquals(resultPosition, mowPositions.get(0));
+	DataGenerator.assertEquals(resultPosition, mowPositions.get(0), 1);
+
     }
 
     /**
@@ -105,7 +106,7 @@ public class MowItNowTest {
 	final List<MowPosition> mowPositions = mowItNow.move(move);
 	Assert.assertNotNull(mowPositions);
 	Assert.assertEquals(1, mowPositions.size());
-	Assert.assertEquals(resultPosition, mowPositions.get(0));
+	DataGenerator.assertEquals(resultPosition, mowPositions.get(0), 1);
     }
 
     /**
@@ -121,7 +122,7 @@ public class MowItNowTest {
 	final List<MowPosition> mowPositions = mowItNow.move(move);
 	Assert.assertNotNull(mowPositions);
 	Assert.assertEquals(1, mowPositions.size());
-	Assert.assertEquals(resultPosition, mowPositions.get(0));
+	DataGenerator.assertEquals(resultPosition, mowPositions.get(0), 1);
     }
 
     /**
