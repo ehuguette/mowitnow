@@ -8,7 +8,7 @@
 	</parent>
 	<artifactId>mow-jar</artifactId>
 	<name>Mow-jar</name>
-	<description>application server module to automatic lawn mower</description>
+	<description>application server module to automatic lawn mower test</description>
 	<dependencies>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
